@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .role-selection {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .role-selection h2 {
+      margin-top: 0;
+    }
+
+    .role-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .role-button {
+      background-color: #3498db;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .role-button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="role-selection">
+    <h2>Select Your Role</h2>
+    <div class="role-buttons">
+      <button class="role-button" onclick="redirectToLogin('innovator')">Innovator</button>
+      <button class="role-button" onclick="redirectToLogin('business')">Business/Investment</button>
+      <button class="role-button" onclick="redirectToLogin('government')">Government</button>
+    </div>
+  </div>
+
+  <script>
+    function redirectToLogin(role) {
+      switch (role) {
+        case 'innovator':
+          window.location.href = 'innovator_login.html';
+          break;
+        case 'business':
+          window.location.href = 'business_login.html';
+          break;
+        case 'government':
+          window.location.href = 'government_login.html';
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
+</body>
+</html>

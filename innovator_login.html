@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovator Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .signup-container {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    .signup-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .signup-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .signup-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="signup-header">
+      <h2>Sign Up as an Innovator</h2>
+    </div>
+    <form class="signup-form" id="signup-form" onsubmit="return signup()">
+      <input type="text" placeholder="Full Name" id="fullname" required>
+      <input type="tel" placeholder="Phone Number" id="phone" required>
+      <input type="email" placeholder="Email" id="email" required>
+      <input type="text" placeholder="Aadhar/PAN Card Number" id="aadharpan" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    function signup() {
+      // Perform user signup logic
+      const fullname = document.getElementById('fullname').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const aadharpan = document.getElementById('aadharpan').value;
+
+      // In a real scenario, you would store user data and perform proper validation
+
+      // Redirect to the homepage after successful signup
+      window.location.href = 'innovator_homepage.html';
+      
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</body>
+</html>

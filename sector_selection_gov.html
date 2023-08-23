@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Sector Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .form-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .form-section button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Investor Sector Selection</h2>
+    </div>
+    <form class="form-section" id="sector-form" onsubmit="return submitSector()">
+      <select id="sector" required>
+        <option value="" disabled selected>Select Sector</option>
+        <option value="Health care">Health care</option>
+        <option value="Materials">Materials</option>
+        <option value="Energy">Energy</option>
+        <option value="FMCG">FMCG</option>
+        <option value="Industrials">Industrials</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Financials">Financials</option>
+        <option value="Information technology">Information technology</option>
+        <option value="Communication services">Communication services</option>
+        <option value="Real estate">Real estate</option>
+      </select>
+      <input type="number" placeholder="Amount to Invest (INR)" id="investmentAmount" required>
+      <textarea placeholder="Investment Requirements" id="requirements" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <a href="government_dashboard.html">Go Back Home</a>
+  </div>
+
+  <script>
+    function submitSector() {
+      // Perform sector selection and submission logic
+      const sector = document.getElementById('sector').value;
+      const investmentAmount = document.getElementById('investmentAmount').value;
+      const requirements = document.getElementById('requirements').value;
+
+      // In a real scenario, you would process and store the data
+
+      // Redirect to the investor's homepage after submission
+      window.location.href = 'government_dashboard.html';
+      
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</body>
+</html>

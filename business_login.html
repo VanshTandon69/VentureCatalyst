@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Role</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .choose-role-container {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    .choose-role-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .choose-role-form label {
+      font-size: 14px;
+    }
+
+    .choose-role-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .choose-role-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="choose-role-container">
+    <div class="choose-role-header">
+      <h2>Choose Your Role</h2>
+    </div>
+    <form class="choose-role-form" id="choose-role-form" onsubmit="return chooseRole()">
+      <label for="role">Select your role:</label>
+      <select id="role" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="investor">Sole Investor</option>
+        <option value="business">Business</option>
+      </select>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    function chooseRole() {
+      const selectedRole = document.getElementById('role').value;
+      
+      if (selectedRole === 'investor') {
+        window.location.href = 'investor_login.html';
+      } else if (selectedRole === 'business') {
+        window.location.href = 'business_login.html';
+      }
+
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</body>
+</html>

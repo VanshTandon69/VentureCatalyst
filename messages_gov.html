@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .message-container {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    .message-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .message-form input,
+    .message-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .message-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-container">
+    <div class="message-header">
+      <h2>Send a Message</h2>
+    </div>
+    <form class="message-form" id="message-form" onsubmit="return sendMessage()">
+      <input type="text" placeholder="Subject" id="subject" required>
+      <textarea placeholder="Message" id="message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <a href="government_dashboard.html">Go Back Home</a>
+  </div>
+
+  <script>
+    function sendMessage() {
+      // Perform message sending logic
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      // In a real scenario, you would send the message to the developer
+
+      // Redirect to the investor's homepage after sending
+      window.location.href = 'governemnt_dashboard.html';
+      
+      // Prevent form submission
+      return false;
+    }
+  </script>
+</body>
+</html>

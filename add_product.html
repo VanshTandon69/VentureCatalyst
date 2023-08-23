@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .add-product-container {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      margin: 50px auto;
+      max-width: 400px;
+    }
+
+    .add-product-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .add-product-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .add-product-form input, .add-product-form textarea, .add-product-form button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .add-product-form button {
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .add-product-form button:hover {
+      background-color: #2980b9;
+    }
+
+    .add-product-form a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #3498db;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="add-product-container">
+    <div class="add-product-header">
+      <h2>Add Your Product</h2>
+    </div>
+    <form class="add-product-form" id="add-product-form" onsubmit="return addProduct()">
+      <label for="product-name">Product Name</label>
+      <input type="text" id="product-name" required>
+
+      <label for="product-ask">Your Ask (INR)</label>
+      <input type="number" id="product-ask" required>
+
+      <label for="product-equity">Equity Offered (%)</label>
+      <input type="number" id="product-equity" required>
+
+      <label for="product-description">Product Description</label>
+      <textarea id="product-description" rows="4" required></textarea>
+
+      <label for="contact-phone">Contact Phone</label>
+      <input type="tel" id="contact-phone" required>
+
+      <label for="product-image">Product Image</label>
+      <input type="file" id="product-image" accept="image/*" required>
+
+      <button type="submit">Submit Product</button>
+    </form>
+    <a href="innovator_homepage.html">Go Back to Homepage</a>
+  </div>
+  <script>
+    function addProduct() {
+      const imageReader = new FileReader();
+
+imageReader.onload = function(event) {
+  const imageUrl = event.target.result; // Base64 image data
+
+  const product = {
+    name: productName,
+    ask: productAsk,
+    equity: productEquity,
+    description: productDescription,
+    phone: contactPhone,
+    image: imageUrl // Store the image data URL
+  };
+
+      const productName = document.getElementById('product-name').value;
+      const productAsk = document.getElementById('product-ask').value;
+      const productEquity = document.getElementById('product-equity').value;
+      const productDescription = document.getElementById('product-description').value;
+      const contactPhone = document.getElementById('contact-phone').value;
+      const productImageInput = document.getElementById('product-image');
+      
+      // Create a FileReader to read the selected image
+      const imageReader = new FileReader();
+      
+      imageReader.onload = function(event) {
+        const imageUrl = event.target.result; // Base64 image data
+        
+        // ... rest of your addProduct logic ...
+        // Update storedProducts and save to localStorage
+        // ...
+        
+        // Clear the form fields
+        document.getElementById('product-name').value = '';
+        document.getElementById('product-ask').value = '';
+        document.getElementById('product-equity').value = '';
+        document.getElementById('product-description').value = '';
+        document.getElementById('contact-phone').value = '';
+        
+        // Display success message or perform any desired actions
+        
+        return false; // Prevent form submission
+      };
+      
+      // Read the selected image file
+      if (productImageInput.files && productImageInput.files[0]) {
+        imageReader.readAsDataURL(productImageInput.files[0]);
+      }
+
+      return false; // Prevent form submission
+      localStorage.setItem('products', JSON.stringify(existingProducts));
+
+// Clear the form fields
+// ...
+};
+
+// Read the selected image file
+if (productImageInput.files && productImageInput.files[0]) {
+imageReader.readAsDataURL(productImageInput.files[0]);
+}
+
+return false; // Prevent form submission
+    }
+  </script>
+  <script>
+    // JavaScript code here...
+  </script>
+</body>
+</html>

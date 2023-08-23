@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Schemes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #3498db; /* Header background color */
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .scheme-list {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .scheme-item {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .scheme-item:hover {
+      background-color: #f2f2f2;
+    }
+
+    #go-back-btn {
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Government Schemes</h1>
+  </header>
+
+  <main>
+    <div class="scheme-list">
+      <div class="scheme-item" onclick="showDetails('Scheme 1')">
+        Funding High Risk - High Reward Research
+      </div>
+      <div class="scheme-item" onclick="showDetails('Scheme 2')">
+        NewGen IEDC
+      </div>
+      <div class="scheme-item" onclick="showDetails('Scheme 3')">
+        The Small Business Innovation Research Initiative (SBIRI)
+      </div>
+      <div class="scheme-item" onclick="showDetails('Scheme 4')">
+        BIPP
+      </div>
+    </div>
+    <div id="scheme-details" style="display: none;">
+      <!-- Scheme details will be shown here -->
+    </div>
+
+    <div id="go-back-btn">
+      <button onclick="goBack()">Go Back to Home</button>
+    </div>
+  </main>
+
+  <script>
+    function showDetails(schemeName) {
+      const detailsDiv = document.getElementById('scheme-details');
+      detailsDiv.style.display = 'block';
+      detailsDiv.innerHTML = getSchemeDetails(schemeName);
+    }
+
+    function getSchemeDetails(schemeName) {
+      // Replace with actual scheme details
+      const schemeDetails = {
+        'Scheme 1': ` Details for Scheme 1: Ministry of Science & Technology , Science and Engineering Research Board (SERB) 
+ Key Sectors Covered:- Science and Technology 
+ 
+ Eligibility Criteria: 
+ 
+ Applicant should be an Indian citizen residing in India. 
+ The applicant(s) must hold a regular academic/research position in a recognized institution. 
+ The proposals can be submitted by an individual or by a team of investigators. Proposals submitted by a team of investigators must identify a Principal Investigator, who will spearhead the research objectives and administer the grant. 
+ 
+ Brief:
+ The Scheme for Funding High Risk - High Reward Research aims at supporting proposals that are conceptually new and risky, and if successful, expected to have a paradigm shifting influence on the S&T. This may be in terms of formulating new hypothesis, or scientific breakthroughs which aid in emergence of new technologies. 
+ Benefits:
+ 
+ The funding is provided normally for a period of three years. In exceptional cases, the duration can be up to 5 years as assessed by the expert committee. 
+ No budget limit is prescribed for this type of projects. The research grant covers equipment, consumables, contingency and travel apart from overhead grants. 
+ 
+ 
+  Link to Application: https://serbonline.in/SERB/HRR
+`,
+        'Scheme 2': ` Details for Scheme 2:Nodal Ministry/Department: 
+ Ministry of Science & Technology 
+ Key Sector Covered:- Science and Technology 
+ 
+ Eligibility Criteria 
+ 
+ The institution should be a University/Deemed University or a premier Institute/College offering Engineering, Technology, Science courses at degree level or above for at least 5 years. 
+ The institution must have at least two faculty members trained in Entrepreneurship through DST sponsored Faculty Development Programme and should have minimum dedicated space of about 5000 square feet for housing the NewGen IEDC. 
+ 
+ Brief:
+ New Generation Innovation and Entrepreneurship Development Centre (NewGen IEDC) is the programme launched by National Science and Technology Entrepreneurship Development Board (NSTEDB), Department of Science & Technology (DST), Government of India and implemented by EDII, Ahmedabad. NewGen IEDC aims to inculcate the spirit of innovation and entrepreneurship amongst the young S&T students, encourage and support start-up creation through guidance, mentorship & support. NewGen IEDCs would be established in academic institutions where students will be encouraged to take up innovative projects with possibility of commercialization. possibility of commercialization. 
+ Benefits: 
+ Financial assistance to the selected institutions for establishment of NewGen IEDC, towards its non-recurring. 
+ As one time establishment cost) of up to Rs. 25 Lakhs and recurring expenditure (Project Development Cost, Travel, Training and Contingencies, etc. of up to Rs. 10 lakhs for five full operational years would be provided. 
+ 
+  Link to Application: https://www.indiascienceandtechnology.gov.in/funding-opportunities/startups/newgen-innovation-and-entrepreneurship-development-centre-newgen-iedc
+`,
+        'Scheme 3': ` Details for Scheme 3: Nodal Ministry/Department: 
+ Ministry of Science & Technology , Biotechnology Industry Research Assistance Council (BIRAC). 
+ Key Sector Covered Science and Technology 
+ 
+ Eligibility Criteria 
+ Eligibility Criteria for Industry 
+ 
+ Minimum 51% of the shares of the Company should be held by Indian Citizens holding Indian passport (Indian Citizens do not include Person of Indian Origin (PIO) and Overseas Citizenship of India (OCI) holders) 
+ Minimum half of the persons who subscribed their names to the LLP document as its Partners should be Indian citizens. 
+ Participating companies should have adequate in-house facility to address the project implementation aspects (which shall be evaluated during the site visit) OR Incubated with any of the recognized Incubation Facility. 
+ 
+ Eligibility Criteria for Academic Collaborator
+ 
+ Public/private university/colleges in India
+ National research laboratories
+ Not-for-profit private research labs/societies/foundation 
+ 
+ Brief:
+ The Small Business Innovation Research Initiative (SBIRI) scheme of the Department of Biotechnology, Ministry of Science & Technology was launched in 2005 to boost Public-Private- Partnership (PPP) efforts in the country. It has facilitated innovation, risk taking by small and medium companies and bringing together the private industry, public institutions, and the government under one roof to promote the research and innovation in the Indian Biotech Sector. The projects supported under the scheme have resulted in prominent outcomes in the form of some products which have already come to the market. 
+ Benefits: 
+ 
+ Up to 50 lakhs: 100% grant from BIRAC (primary applicant + collaborating company, if any) 
+ More than 50 lakhs: BIRAC grant would be Rs. 50 Lakhs + 50% of the Cost over and above Rs. 50 Lakhs. Remaining cost would be borne by the company 
+ 
+ 
+  Link to Application: https://birac.nic.in/desc_new.php?id=217
+`,
+        'Scheme 4': ` Details for Scheme 4: Nodal Ministry/Department: 
+ Ministry of Science & Technology , Biotechnology Industry Research Assistance Council (BIRAC) 
+ Key Sector Covered: Biotechnology 
+ 
+ EligibilityCriteria: BIPP covers four broadcategories(I,II,III&IV) as described below: 
+ Category I: Areas with major social relevance but uncertain market driven demand Category II: High risk, discovery and innovation research with relevance for makingIndiaglobally competitive Category III A: Evaluation & validation of already existing products of high nationalimportancepromoting local innovation(Clinical Trials) Category III B:Evaluation & validation of already existing products of high nationalimportancepromoting localinnovation (AgricultureField Trials) CategoryIV:Shared costmajorfacilities,criticalforenablinginnovation
+ Brief:
+ The main aim of the scheme is to provide support for high risk , accelerated technology development especially in futuristic technologies. Support for very high risk, nationally and socially relevant areas, with no assured market. This would be more of translational research in such cases. It is envisaged that public institutes would be useful partners, so that the basic R&D leads can be translated to product development by the industry. 
+ Provides for product evaluation and validation through support for limited and large- scale field trial for agriculture products and clinical trials (Phase I, II, III) for health care products. Supporting research project for novel IP generation. 
+ Benefits:
+ 
+ Support for high risk, accelerated technology development especially in futuristictechnologies. 
+ Supportforveryhighrisk,nationallyandsociallyrelevantareas,withnoassuredmarket. This would be more of translational research in such cases.It isenvisaged that public institutes would be useful partners, so that the basic R&Dleadscanbe translatedtoproductdevelopmentby theindustry. 
+ Provides for product evaluation and validation through support for limited andlarge-scale field trial for agriculture products and clinical trials (Phase I, II, III) forhealthcareproducts. 
+ SupportingresearchprojectfornovelIPgeneration. 
+ 
+ 
+  Link to Application: https://birac.nic.in/desc_new.php?id=216
+`
+      };
+
+      return schemeDetails[schemeName] || '';
+    }
+
+    function goBack() {
+      window.location.href = 'innovator_homepage.html'; // Change the URL to your homepage
+    }
+  </script>
+</body>
+</html>
